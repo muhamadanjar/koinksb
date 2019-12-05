@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { StatusBar, SafeAreaView, ScrollView, Image } from 'react-native'
-import { Header, Left, Right, View, Content, Text, Grid, Col } from 'native-base'
-import styles from "./style";
+import { View, Content, Text, Grid, Col, Row, Button } from 'native-base'
+import styles from './style';
+import Circle from '../../components/Circle';
+import Header from '../../components/Header';
 const rekening = require('../../assets/ic_rekening.png')
 export default class Home extends Component {
     render() {
@@ -10,25 +12,19 @@ export default class Home extends Component {
              <StatusBar barStyle="dark-content" />
                 <SafeAreaView>
                     <ScrollView  contentInsetAdjustmentBehavior="automatic">
-                        <Header style={styles.header}>
-                            <Left>
-                                <Image source={require('../../assets/ic_koin_dashboard.png')} style={styles.iconHeader} resizeMode="contain"/>
-                            </Left>
-                            <Right>
-                                <View>
-                                    <Image source={require('../../assets/ic_notification.png')} style={styles.iconHeader} resizeMode="contain"/>
-                                </View>
-                            </Right>
-                        </Header>
+                        <Header/>
                         <Content>
                             <View style={styles.container}>
                                 <View style={styles.menuContainer}>
                                     <View style={styles.menu}>
-                                        <Image
-                                            style={styles.menuImg}
-                                            source={rekening}
-                                            />
-                                        <Text style={styles.menuTitle}>Rekening</Text>
+                                        <Button transparent>
+                                            <Image
+                                                style={styles.menuImg}
+                                                source={rekening}
+                                                />
+                                            <Text style={styles.menuTitle}>Rekening</Text>
+                                        </Button>
+                                        
                                     </View>
                                     <View style={styles.menu}>
                                         <Image style={styles.menuImg} source={rekening}/>
@@ -46,10 +42,15 @@ export default class Home extends Component {
                                 </View>
                                 <View></View>
                                 <Grid>
-                                    <Col></Col>
-                                    <Col></Col>
-                                    <Col></Col>
-                                    <Col></Col>
+                                    <Row>
+                                        <Col>
+                                            <Circle name="a" color="#393E41"></Circle>
+                                        </Col>
+                                        <Col></Col>
+                                        <Col></Col>
+                                        <Col></Col>
+                                    </Row>
+                                    
                                 </Grid>
                             </View>
                             </Content>
