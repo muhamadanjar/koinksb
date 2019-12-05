@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'native-base';
+import { View,Button } from 'native-base';
 import { StyleSheet, Image, Text } from 'react-native';
 export interface Props {
     name: string;
@@ -8,26 +8,37 @@ export interface Props {
 
 const Circle: React.FC<Props> = (props) => {
     const styles = StyleSheet.create({
-        container: {
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: '#fff',
+        container:{
+            margin:1,
+            alignContent:'center',
+            alignItems:'center'
         },
-        myButton:{
-            padding: 5,
-            height: 200,
-            width: 200,  //The Width must be the same as the height
-            borderRadius:400, //Then Make the Border Radius twice the size of width or Height   
-            backgroundColor:'rgb(195, 125, 198)',
-        
-          }
+        circle: {
+            width: 80,
+            height: 80,
+            borderRadius: 80/2,
+            borderWidth:1,
+            borderColor:'#ddd',
+            backgroundColor: props.color,
+            marginBottom:11,
+            flex:1,
+            elevation:1,
+            justifyContent:'center',
+            alignItems:'center',
+            shadowColor:'#000',
+            shadowRadius:1,
+            shadowOpacity:0.8
+        }
     });
     return(
         <View style={styles.container}>
-            <View style={styles.myButton}>
-                <Text>Circle Button</Text>
+            
+            <View style={styles.circle}>
+                
+                <Image style={{alignContent:'center'}} source={require('../assets/ic_sbmax_white.png')}/>
+                
             </View>
+            <Text>{props.name}</Text>
         </View>
     );
 }

@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { StatusBar, SafeAreaView, ScrollView, Image } from 'react-native'
-import { View, Content, Text, Grid, Col, Row, Button } from 'native-base'
+import { StatusBar, SafeAreaView, ScrollView } from 'react-native'
+import { View, Content, Grid, Col, Row } from 'native-base'
 import styles from './style';
 import Circle from '../../components/Circle';
 import Header from '../../components/Header';
-const rekening = require('../../assets/ic_rekening.png')
+import Menu from '../../components/Menu';
+
 export default class Home extends Component {
     render() {
         return (
@@ -15,45 +16,44 @@ export default class Home extends Component {
                         <Header/>
                         <Content>
                             <View style={styles.container}>
-                                <View style={styles.menuContainer}>
-                                    <View style={styles.menu}>
-                                        <Button transparent>
-                                            <Image
-                                                style={styles.menuImg}
-                                                source={rekening}
-                                                />
-                                            <Text style={styles.menuTitle}>Rekening</Text>
-                                        </Button>
-                                        
-                                    </View>
-                                    <View style={styles.menu}>
-                                        <Image style={styles.menuImg} source={rekening}/>
-                                        
-                                        <Text style={styles.menuTitle}>Transfer</Text>
-                                    </View>
-                                    <View style={styles.menu}>
-                                        <Image style={styles.menuImg} source={rekening}/>
-                                        <Text style={styles.menuTitle}>Beli & Bayar</Text>
-                                    </View>
-                                    <View style={styles.menu}>
-                                        <Image style={styles.menuImg} source={rekening}/>
-                                        <Text style={styles.menuTitle}>Lainnya</Text>
-                                    </View>
-                                </View>
-                                <View></View>
+                                <Menu/>
+                                <View style={{marginTop:32}}>
                                 <Grid>
                                     <Row>
                                         <Col>
-                                            <Circle name="a" color="#393E41"></Circle>
+                                            <Circle name="SBMax" color="#096d5c"></Circle>
                                         </Col>
-                                        <Col></Col>
-                                        <Col></Col>
-                                        <Col></Col>
+                                        <Col>
+                                            <Circle name="Taka" color="#2cbf5a"></Circle>
+                                        </Col>
+                                        <Col>
+                                            <Circle name="Save-T" color="#fa6e70"></Circle>
+                                        </Col>
+                                        <Col>
+                                            <Circle name="SBAuto" color="#235d9f"></Circle>
+                                        </Col>
+                                        
+                                    </Row>
+                                    <Row>
+                                        <Col>
+                                            <Circle name="PickMe" color="#fca000"></Circle>
+                                        </Col>
+                                        <Col>
+                                            <Circle name="Komersial" color="#19738c"></Circle>
+                                        </Col>
+                                        <Col>
+                                            <Circle name="SBReno" color="#4bbfb8"></Circle>
+                                        </Col>
+                                        <Col>
+                                            <Circle name="EZHaj" color="#71ab3c"></Circle>
+                                        </Col>
+                                        
                                     </Row>
                                     
                                 </Grid>
+                                </View>
                             </View>
-                            </Content>
+                        </Content>
                     </ScrollView>
                 </SafeAreaView>
             </>
