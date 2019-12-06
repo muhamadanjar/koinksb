@@ -4,7 +4,7 @@ import { View, Content, Grid, Col, Row } from 'native-base'
 import styles from './style';
 import Circle from '../../components/Circle';
 import Header from '../../components/Header';
-import Menu from '../../components/Menu';
+import MenuItem from '../../components/Menu';
 
 export default class Home extends Component {
     render() {
@@ -16,7 +16,12 @@ export default class Home extends Component {
                         <Header/>
                         <Content>
                             <View style={styles.container}>
-                                <Menu/>
+                                <View style={styles.menuContainer}>
+                                    <MenuItem name="Rekening"/>
+                                    <MenuItem name="Transfer"/>
+                                    <MenuItem name="Beli & Bayar"/>
+                                    <MenuItem name="Lainnya"/>
+                                </View>
                                 <View style={{marginTop:32}}>
                                 <Grid>
                                     <Row>

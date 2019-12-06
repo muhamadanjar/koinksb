@@ -5,45 +5,34 @@ interface Props{
     name?:string
 }
 const rekening = require('../assets/ic_rekening.png')
-const Menu:React.FC<Props> = () => {
+const Menu:React.FC<Props> = (props) => {
     return (
-        <View style={styles.menuContainer}>
+        <View style={styles.container}>
             <View style={styles.menu}>
-                <Button transparent>
-                    <Image
-                        style={styles.menuImg}
-                        source={rekening}
-                        />
-                    <Text style={styles.menuTitle}>Rekening</Text>
-                </Button>
-                
+                <Image
+                    style={styles.menuImg}
+                    source={rekening}
+                    />
             </View>
-            <View style={styles.menu}>
-                <Image style={styles.menuImg} source={rekening}/>
-                <Text style={styles.menuTitle}>Transfer</Text>
-            </View>
-            <View style={styles.menu}>
-                <Image style={styles.menuImg} source={rekening}/>
-                <Text style={styles.menuTitle}>Beli & Bayar</Text>
-            </View>
-            <View style={styles.menu}>
-                <Image style={styles.menuImg} source={rekening}/>
-                <Text style={styles.menuTitle}>Lainnya</Text>
-            </View>
+            <Text style={styles.menuTitle}>{props.name}</Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    menuContainer:{
-        backgroundColor:'#096d5c',flex: 1, flexDirection: 'row',alignContent:'space-between',alignItems:'center',justifyContent:'center',borderRadius:6
+    container:{
+        alignContent:'center',
+        alignItems:'center',
     },
     menu:{
-        width: 100, height: 100,alignItems:'center',flexDirection:'column',padding:15
+        width:60, height: 60,
+        alignItems:'center',
+        paddingTop:15,
+        paddingBottom:4
     },
-    menuImg:{width: 30, height: 30,paddingBottom:9},
+    menuImg:{width: 40, height: 40},
     menuTitle:{
-        color:'#FFF',fontWeight:'bold'
+        color:'#FFF',fontWeight:'bold',
     }
 })
 
